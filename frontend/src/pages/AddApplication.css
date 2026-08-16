@@ -1,0 +1,161 @@
+.add-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    font-family: "Segoe UI", Arial, sans-serif;
+    padding: 50px 20px;
+}
+
+.add-card {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    border: 1px solid #e6eaf0;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    color: #2563eb;
+}
+
+.add-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.add-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    background: #eaf2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.add-title h1 {
+    margin: 0 0 5px;
+    font-size: 27px;
+    color: #172033;
+}
+
+.add-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #dce2ea;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #edf0f4;
+}
+
+.cancel-button {
+    padding: 12px 20px;
+    border: 1px solid #dce2ea;
+    background: white;
+    color: #475569;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-button {
+    padding: 12px 22px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-button:hover {
+    background: #1d4ed8;
+}
+
+.save-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-error {
+    padding: 12px;
+    border-radius: 8px;
+    background: #fef2f2;
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    .add-card {
+        padding: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-button,
+    .save-button {
+        width: 100%;
+    }
+}
