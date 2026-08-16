@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-w(#k0=uabuv^qudo_16&($k+bly5l%(10-(mwu4x!9y-57_u0d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS  = [
+    "jobapplicationtracker-vepn.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -139,7 +143,16 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-}
+        'REFRESH_TOKEN_LIFETIME': timedelta(days=1),}
 
-CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://helnajobtrackerfrontend.onrender.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://jobapplicationtracker-vepn.onrender.com",
+    "https://helnajobtrackerfrontend.onrender.com",
+]
