@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// Create an Axios instance for the deployed Django backend
 const api = axios.create({
-    baseURL: "http://127.0.0.1:8000/api/",
+    baseURL: "https://jobapplicationtracker-vepn.onrender.com/api/",
 });
 
 // Add access token to every request
@@ -40,8 +41,9 @@ api.interceptors.response.use(
 
             if (refreshToken) {
                 try {
+                    // Refresh the access token using the deployed Django backend
                     const response = await axios.post(
-                        "http://127.0.0.1:8000/api/token/refresh/",
+                        "https://jobapplicationtracker-vepn.onrender.com/api/token/refresh/",
                         {
                             refresh: refreshToken,
                         }
@@ -59,6 +61,7 @@ api.interceptors.response.use(
 
                     return api(originalRequest);
                 } catch (refreshError) {
+                    // Remove expired tokens and redirect to login
                     localStorage.removeItem("access_token");
                     localStorage.removeItem("refresh_token");
 
