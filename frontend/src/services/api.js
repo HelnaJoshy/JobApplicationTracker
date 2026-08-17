@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance for the deployed Django backend
 const api = axios.create({
-    baseURL: "https://jobapplicationtracker-backend.onrender.com",
+    baseURL: "https://jobapplicationtracker-backend.onrender.com/api/",
 });
 
 // Add access token to every request
@@ -41,7 +41,7 @@ api.interceptors.response.use(
 
             if (refreshToken) {
                 try {
-                    // Refresh the access token using the deployed Django backend
+                    // Refresh the access token
                     const response = await axios.post(
                         "https://jobapplicationtracker-backend.onrender.com/api/token/refresh/",
                         {
@@ -60,6 +60,7 @@ api.interceptors.response.use(
                         `Bearer ${newAccessToken}`;
 
                     return api(originalRequest);
+
                 } catch (refreshError) {
                     // Remove expired tokens and redirect to login
                     localStorage.removeItem("access_token");
