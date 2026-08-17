@@ -8,7 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
 
         username = "demo"
-        password = "demo12345"
+        password = "demo@123"
 
         user, created = User.objects.get_or_create(
             username=username
