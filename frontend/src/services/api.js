@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance for the deployed Django backend
 const api = axios.create({
-    baseURL: "https://jobapplicationtracker-vepn.onrender.com/api/",
+    baseURL: "https://jobapplicationtracker-backend.onrender.com",
 });
 
 // Add access token to every request
@@ -43,7 +43,7 @@ api.interceptors.response.use(
                 try {
                     // Refresh the access token using the deployed Django backend
                     const response = await axios.post(
-                        "https://jobapplicationtracker-vepn.onrender.com/api/token/refresh/",
+                        "https://jobapplicationtracker-backend.onrender.com/api/token/refresh/",
                         {
                             refresh: refreshToken,
                         }
