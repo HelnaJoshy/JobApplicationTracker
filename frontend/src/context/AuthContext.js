@@ -3,8 +3,6 @@ import axios from "axios";
 
 const AuthContext = createContext();
 
-const API_URL = "https://jobapplicationtracker-backend.onrender.com";
-
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(
         localStorage.getItem("access_token") ? true : false
@@ -13,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     const login = async (username, password) => {
         try {
             const response = await axios.post(
-                `${API_URL}/api/token/`,
+                "https://jobapplicationtracker-backend.onrender.com/api/token/",
                 {
                     username,
                     password,
